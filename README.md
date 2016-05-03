@@ -11,7 +11,7 @@ Update your `composer.json` file to include this package as a dependency
 Laravel 5 & Lumen
 
 ```json
-"davibennun/laravel-push-notification": "dev-laravel5"
+"hoosk/laravel-push-notification": "dev-laravel5"
 ```
 
 Register the PushNotification service provider by adding it to the providers array.

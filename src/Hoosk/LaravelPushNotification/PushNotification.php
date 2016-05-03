@@ -1,4 +1,6 @@
-<?php namespace Davibennun\LaravelPushNotification;
+<?php 
+
+namespace Hoosk\LaravelPushNotification;
 
 class PushNotification {
 

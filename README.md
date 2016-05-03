@@ -3,7 +3,7 @@ Laravel 5 Push Notification
 
 Package to enable sending push notifications to devices.
 
-Based on previous work of [Laravel Push Notification]:https://github.com/davibennun/laravel-push-notification
+Based on previous work of [Laravel Push Notification](https://github.com/davibennun/laravel-push-notification)
 
 Installation
 ----

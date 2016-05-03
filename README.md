@@ -1,7 +1,9 @@
-Laravel Push Notification
+Laravel 5 Push Notification
 =========
 
-Package to enable sending push notifications to devices
+Package to enable sending push notifications to devices.
+
+Based on previous work of [Laravel Push Notification]:https://github.com/davibennun/laravel-push-notification
 
 Installation
 ----
@@ -111,7 +113,7 @@ $devices = PushNotification::DeviceCollection(array(
 $message = PushNotification::Message('Message Text',array(
     'badge' => 1,
     'sound' => 'example.aiff',
-    
+
     'actionLocKey' => 'Action button title!',
     'locKey' => 'localized key',
     'locArgs' => array(
@@ -119,7 +121,7 @@ $message = PushNotification::Message('Message Text',array(
         'localized args',
     ),
     'launchImage' => 'image.jpg',
-    
+
     'custom' => array('custom data' => array(
         'we' => 'want', 'send to app'
     ))

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'appNameIOS'     => [
         'environment' =>'development',
         'certificate' =>'/path/to/certificate.pem',
@@ -13,5 +12,4 @@ return [
         'apiKey'      =>'yourAPIKey',
         'service'     =>'gcm'
     ]
-
 ];

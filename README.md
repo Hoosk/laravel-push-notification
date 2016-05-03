@@ -36,7 +36,16 @@ Copy the config file into your project by running: (Lumen users skip this)
 
 Laravel 5
 ```php
+<<<<<<< HEAD
+php artisan vendor:publish --provider="Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
+```
+
+Laravel 4.*
+```
+php artisan vendor:publish --provider="Vendor/Davibennun/LaravelPushNotification/LaravelPushNotificationServiceProvider" --tag="config"
+=======
 php artisan vendor:publish --provider="Hoosk\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
+>>>>>>> master
 ```
 
 This will generate a config file like this

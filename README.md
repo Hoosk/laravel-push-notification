@@ -8,44 +8,44 @@ Installation
 
 Update your `composer.json` file to include this package as a dependency
 
-Laravel 5
+Laravel 5 & Lumen
 
 ```json
-"davibennun/laravel-push-notification": "dev-laravel5"
-```
-Laravel 4.*
-```json
-"davibennun/laravel-push-notification": "dev-master"
+"hoosk/laravel-push-notification": "dev-laravel5"
 ```
 
 Register the PushNotification service provider by adding it to the providers array.
 ```php
-'providers' => array(
+'providers' => [
 	...
-	'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
-)
+	Hoosk\LaravelPushNotification\LaravelPushNotificationServiceProvider::class,
+];
 ```
 
 Alias the PushNotification facade by adding it to the aliases array in the `app/config/app.php` file.
 ```php
-'aliases' => array(
+'aliases' => [
 	...
-	'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification'
-)
+	'PushNotification' => Hoosk\LaravelPushNotification\Facades\PushNotification::class,
+]
 ```
 
 # Configuration
 
-Copy the config file into your project by running
+Copy the config file into your project by running: (Lumen users skip this)
 
 Laravel 5
 ```php
+<<<<<<< HEAD
 php artisan vendor:publish --provider="Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
 ```
 
 Laravel 4.*
 ```
 php artisan vendor:publish --provider="Vendor/Davibennun/LaravelPushNotification/LaravelPushNotificationServiceProvider" --tag="config"
+=======
+php artisan vendor:publish --provider="Hoosk\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
+>>>>>>> master
 ```
 
 This will generate a config file like this
@@ -84,6 +84,23 @@ PushNotification::app('appNameIOS')
 
 ```
 Where app argument `appNameIOS` refers to defined service in config file.
+
+###Dynamic configuration and Lumen users
+You can set the app config array directly: (keep in mind the array schema)
+```php
+//iOS app
+PushNotification::app(['environment' => 'development',
+		'certificate' => '/path/to/certificate.pem',
+		'passPhrase'  => 'password',
+		'service'     => 'apns']);
+//Android app		
+PushNotification::app(['environment' => 'production',
+		'apiKey'      => 'yourAPIKey',
+		'service'     => 'gcm']);
+
+```
+
+
 To multiple devices and optioned message:
 ```php
 $devices = PushNotification::DeviceCollection(array(
@@ -108,7 +125,7 @@ $message = PushNotification::Message('Message Text',array(
     ))
 ));
 
-collection = PushNotification::app('appNameIOS')
+$collection = PushNotification::app('appNameIOS')
     ->to($devices)
     ->send($message);
 

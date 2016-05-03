@@ -22,5 +22,6 @@
             "Hoosk\\LaravelPushNotification": "src/"
         }
     },
+    "license": "MIT",
     "minimum-stability": "dev"
 }

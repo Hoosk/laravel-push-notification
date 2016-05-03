@@ -42,17 +42,9 @@ Laravel 5
 php artisan vendor:publish --provider="Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
 ```
 
-Laravel 4.*
-```
-php artisan vendor:publish --provider="Vendor/Davibennun/LaravelPushNotification/LaravelPushNotificationServiceProvider" --tag="config"
-=======
-php artisan vendor:publish --provider="Hoosk\LaravelPushNotification\LaravelPushNotificationServiceProvider" --tag="config"
->>>>>>> master
-```
-
 This will generate a config file like this
 ```php
-array(
+return [
     'appNameIOS'=>array(
 		'environment' => 'development',
 		'certificate' => '/path/to/certificate.pem',
@@ -64,7 +56,7 @@ array(
 		'apiKey'      => 'yourAPIKey',
 		'service'     => 'gcm'
     )
-);
+];
 ```
 Where all first level keys corresponds to an service configuration, each service has its own properties, android for instance have `apiKey` and IOS uses `certificate` and `passPhrase`. You can set as many services configurations as you want, one for each app.
 

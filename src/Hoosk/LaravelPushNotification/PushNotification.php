@@ -4,11 +4,7 @@ class PushNotification {
 
     public function app($appName)
     {
-<<<<<<< HEAD:src/Davibennun/LaravelPushNotification/PushNotification.php
         $config = is_array($appName) ? $appName : config('push-notification.'.$appName);
-=======
-        $config = is_array($appName) ? $appName : \Config::get('laravel-push-notification::'.$appName);
->>>>>>> master:src/Hoosk/LaravelPushNotification/PushNotification.php
         return new App($config);
     }
 

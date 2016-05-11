@@ -1,4 +1,6 @@
-<?php namespace Davibennun\LaravelPushNotification;
+<?php
+
+namespace Hoosk\LaravelPushNotification;
 
 use Sly\NotificationPusher\PushManager,
     Sly\NotificationPusher\Model\Device,
@@ -6,7 +8,7 @@ use Sly\NotificationPusher\PushManager,
     Sly\NotificationPusher\Model\Push;
 
 class App {
-    
+
     public function __construct($config)
     {
         $this->pushManager = new PushManager($config['environment'] == "development" ? PushManager::ENVIRONMENT_DEV : PushManager::ENVIRONMENT_PROD);
@@ -30,7 +32,7 @@ class App {
         $push = new Push($this->adapter, $this->addressee, ($message instanceof Message) ? $message : new Message($message, $options));
 
         $this->pushManager->add($push);
-        
+
         $this->pushManager->push();
 
         return $this;

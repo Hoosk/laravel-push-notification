@@ -1,4 +1,4 @@
-<?php namespace Davibennun\LaravelPushNotification;
+<?php namespace Hoosk\LaravelPushNotification;
 
 use Illuminate\Support\ServiceProvider,
     Davibennun\LaravelPushNotification\PushNotification;

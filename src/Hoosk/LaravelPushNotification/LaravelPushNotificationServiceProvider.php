@@ -1,7 +1,7 @@
 <?php namespace Hoosk\LaravelPushNotification;
 
 use Illuminate\Support\ServiceProvider,
-    Davibennun\LaravelPushNotification\PushNotification;
+    Hoosk\LaravelPushNotification\PushNotification;
 
 class LaravelPushNotificationServiceProvider extends ServiceProvider {
 
